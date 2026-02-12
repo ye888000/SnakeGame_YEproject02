@@ -9,7 +9,7 @@ import java.util.Random;
  * Snake の体および食物を同一の Node として扱い、
  * 座標管理を共通化することで処理の単純化を図っている。
  *
- * 【职责范围】
+ * 【責務範囲】
  * ・x, y 座標の保持
  * ・食物生成時のランダム座標設定
  *
@@ -59,4 +59,5 @@ public class Node {
             this.y=r.nextInt(40);
         }
     }
+
 
