@@ -24,7 +24,7 @@ import java.awt.Color;
  *
  * 【設計上の取捨】
  * ・Timerで定期的にゲーム状態を更新し、ループ処理による画面応答遅延やプログラムのフリーズを回避。
- * ・描画ロジックを JPanel内に集中させ、repaint()で刷新タイミングを統一。
+ * ・描画ロジックをJPanel内に集中させ、repaint()で刷新タイミングを統一。
  * ・MainFrameはゲームルールを直接実装せず、制御・調整層としてのみ存在。
  *
  * 【协作クラス】
@@ -66,8 +66,8 @@ public class MainFrame extends JFrame {
      //ウィンドウサイズおよび表示位置を固定することで、ユーザー操作や実行環境差異によるレイアウト崩れを防止する。
     private void initFrame() {
         setTitle("Snake Game");
-        setSize(610, 648);
-        setLocation(300, 300);
+        setSize(610,648);
+        setLocation(300,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
     }
@@ -75,24 +75,24 @@ public class MainFrame extends JFrame {
 
      //ゲーム画面の描画を一箇所に集約し、蛇、食物、グリッド、ゲーム終了表示などの描画タイミングを統一管理することを目的としている。
     private void initGamePanel() {
-        jPanel = new JPanel() {
+        jPanel=new JPanel() {
             @Override
             public void paint(Graphics g) {
                 super.paint(g);
 
                 //グリッド描画 
-                for (int i = 0; i <= 40; i++) {
-                    g.drawLine(0, i * 15, 600, i * 15);
+                for(int i=0;i<=40;i++) {
+                    g.drawLine(0,i*15,600,i*15);
                 }
-                for (int i = 0; i <= 40; i++) {
-                    g.drawLine(i * 15, 0, i * 15, 600);
+                for(int i = 0;i<= 40;i++) {
+                    g.drawLine(i*15,0,i*15,600);
                 }
 
                 //蛇描画
-                if (snake != null) {
+                if(snake!=null) {
                     g.setColor(Color.BLACK);
-                    for (Node node : snake.getBody()) {
-                        g.fillRect(node.getX() * 15, node.getY() * 15, 15, 15);
+                    for(Node node:snake.getBody()) {
+                        g.fillRect(node.getX()*15, node.getY() *15,15,15);
                     }
                 }
                 //食物描画
@@ -179,3 +179,4 @@ public class MainFrame extends JFrame {
         new MainFrame();
     }
 }
+
