@@ -1,5 +1,7 @@
 package SnakeGame_YEproject02;
+
 import java.util.LinkedList;
+
 /**
  * 【Snake層】
  * 蛇を表すクラス
@@ -101,3 +103,4 @@ import java.util.LinkedList;
         return isLiving;
     }
 }
+
